@@ -14,13 +14,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://365art.org"),
   title: {
-    default: "365 COINS – On-Chain Performance Art",
-    template: "%s | 365 COINS",
+    default: "$365 onchain art performance",
+    template: "%s | 365",
   },
   description:
-    "365 COINS is a year-long on-chain performance by an artist deploying one token per day on Pump.fun. A reflection on creation, decay, and the permanence of digital memory.",
+    "365 is a year-long on-chain performance by an artist deploying one token per day on Pump.fun. A reflection on creation, decay, and the permanence of digital memory.",
   openGraph: {
-    title: "365 COINS – A Year of On-Chain Creation",
+    title: "365 – A Year of On-Chain Creation",
     description:
       "An artistic performance unfolding over 365 days: one token per day, same hour, same ritual. Each coin lives, fades, yet remains forever on-chain.",
     url: "https://365art.org",
@@ -32,13 +32,13 @@ export const metadata: Metadata = {
         url: "https://365art.org/assets/banner.png",
         width: 1200,
         height: 630,
-        alt: "365 COINS – A Year of On-Chain Performance",
+        alt: "365 – A Year of On-Chain Performance",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "365 COINS – On-Chain Performance Art",
+    title: "365 – On-Chain Performance Art",
     description:
       "A year-long blockchain performance: one coin every day, a ritual of creation and oblivion. The first coin, $365, anchors the entire series.",
     images: ["https://365art.org/assets/banner.png"],

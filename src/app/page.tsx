@@ -12,6 +12,7 @@ export default function Home() {
       <div className="header">
 
       <p className="font-bold text-6xl italic mb-4">$365 coin</p>
+      <p>365 is a year-long on-chain performance by an artist deploying one token per day on Pump.fun. A reflection on creation, decay, and the permanence of digital memory.</p>
       <a
         href="https://twitter.com/r3ktsatoshi"
         target="_blank"

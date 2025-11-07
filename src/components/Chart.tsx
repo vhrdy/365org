@@ -14,6 +14,15 @@ import {
   Legend,
 } from "chart.js";
 
+type Token = {
+  name?: string;
+  symbol?: string;
+  address?: string;
+  marketCap?: number;
+  volume24h?: number;
+  holders?: number;
+};
+
 ChartJS.register(
   CategoryScale,
   LinearScale,

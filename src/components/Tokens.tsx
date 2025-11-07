@@ -36,7 +36,7 @@ export default function Tokens() {
         console.error(e);
         setError(e?.message ?? "Unknown error");
       } finally {
-        await new Promise((r) => setTimeout(r, 5000));
+        await new Promise((r) => setTimeout(r, 1500));
         setLoading(false);
       }
     }

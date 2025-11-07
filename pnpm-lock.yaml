@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  chart.js:
+    specifier: ^4.5.1
+    version: 4.5.1
   class-variance-authority:
     specifier: ^0.7.1
     version: 0.7.1
@@ -26,6 +29,9 @@ dependencies:
   react:
     specifier: 19.2.0
     version: 19.2.0
+  react-chartjs-2:
+    specifier: ^5.3.1
+    version: 5.3.1(chart.js@4.5.1)(react@19.2.0)
   react-dom:
     specifier: 19.2.0
     version: 19.2.0(react@19.2.0)
@@ -596,6 +602,10 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  /@kurkle/color@0.3.4:
+    resolution: {integrity: sha512-M5UknZPHRu3DEDWoipU6sE8PdkZ6Z/S+v4dD+Ke8IaNlpdSQah50lz1KtcFBa2vsdOnwbbnxJwVM4wty6udA5w==}
+    dev: false
 
   /@napi-rs/wasm-runtime@0.2.12:
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
@@ -1485,7 +1495,7 @@ packages:
     dependencies:
       baseline-browser-mapping: 2.8.25
       caniuse-lite: 1.0.30001754
-      electron-to-chromium: 1.5.247
+      electron-to-chromium: 1.5.248
       node-releases: 2.0.27
       update-browserslist-db: 1.1.4(browserslist@4.27.0)
 
@@ -1530,6 +1540,13 @@ packages:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
     dev: true
+
+  /chart.js@4.5.1:
+    resolution: {integrity: sha512-GIjfiT9dbmHRiYi6Nl2yFCq7kkwdkp1W/lp2J99rX0yo9tgJGn3lKQATztIjb5tVtevcBtIdICNWqlq5+E8/Pw==}
+    engines: {pnpm: '>=8'}
+    dependencies:
+      '@kurkle/color': 0.3.4
+    dev: false
 
   /class-variance-authority@0.7.1:
     resolution: {integrity: sha512-Ka+9Trutv7G8M6WT6SeiRWz792K5qEqIGEGzXKhAE6xOWAY6pPH8U+9IY3oCMv6kqTmLsv7Xh/2w2RigkePMsg==}
@@ -1746,8 +1763,8 @@ packages:
       gopd: 1.2.0
     dev: true
 
-  /electron-to-chromium@1.5.247:
-    resolution: {integrity: sha512-bCkfEJNE5EOhEsGpgbvgUAXYP/uAZeN9GCd9bPGjm2/uiLdpoiZnxrBTbWT1nbZs1y6UqN7hatM3hOB4X1kXUQ==}
+  /electron-to-chromium@1.5.248:
+    resolution: {integrity: sha512-zsur2yunphlyAO4gIubdJEXCK6KOVvtpiuDfCIqbM9FjcnMYiyn0ICa3hWfPr0nc41zcLWobgy1iL7VvoOyA2Q==}
 
   /emoji-regex@9.2.2:
     resolution: {integrity: sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==}
@@ -3271,6 +3288,16 @@ packages:
   /queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
+
+  /react-chartjs-2@5.3.1(chart.js@4.5.1)(react@19.2.0):
+    resolution: {integrity: sha512-h5IPXKg9EXpjoBzUfyWJvllMjG2mQ4EiuHQFhms/AjUm0XSZHhyRy2xVmLXHKrtcdrPO4mnGqRtYoD0vp95A0A==}
+    peerDependencies:
+      chart.js: ^4.1.1
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    dependencies:
+      chart.js: 4.5.1
+      react: 19.2.0
+    dev: false
 
   /react-dom@19.2.0(react@19.2.0):
     resolution: {integrity: sha512-UlbRu4cAiGaIewkPyiRGJk0imDN2T3JjieT6spoL2UeSf5od4n5LB/mQ4ejmxhCFT1tYe8IvaFulzynWovsEFQ==}

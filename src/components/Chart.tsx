@@ -52,6 +52,7 @@ export default function Tokens() {
           console.error(e);
           setError(e?.message ?? "Unknown error");
         } finally {
+          await new Promise((r) => setTimeout(r, 1500));
           setLoading(false);
         }
       }
@@ -129,7 +130,7 @@ export default function Tokens() {
     return (
       <>
         {loading && (
-          <p className="text-sm text-muted-foreground">Loading tokens…</p>
+          <div className="w-full h-[650px] animate-pulse bg-gray-900 rounded-md"></div>
         )}
   
         {error && !loading && (

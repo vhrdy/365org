@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 import { useEffect, useState } from "react";
 
@@ -19,52 +19,61 @@ type Token = {
 };
 
 export default function Tokens() {
-    const [tokens, setTokens] = useState<Token[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
-  
-    useEffect(() => {
-      async function load() {
-        try {
-          const res = await fetch("/api/token-price");
-          if (!res.ok) {
-            throw new Error("Failed to fetch /api/token-price");
-          }
-          const json = await res.json();
-          setTokens(json.tokens ?? []);
-        } catch (e: any) {
-          console.error(e);
-          setError(e?.message ?? "Unknown error");
-        } finally {
-          setLoading(false);
+  const [tokens, setTokens] = useState<Token[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function load() {
+      try {
+        const res = await fetch("/api/token-price");
+        if (!res.ok) {
+          throw new Error("Failed to fetch /api/token-price");
         }
+        const json = await res.json();
+        setTokens(json.tokens ?? []);
+      } catch (e: any) {
+        console.error(e);
+        setError(e?.message ?? "Unknown error");
+      } finally {
+        setLoading(false);
       }
-  
-      load();
-    }, []);
-  
-    return (
-<> 
-        {loading && (
-          <p className="text-sm text-muted-foreground">Loading tokens…</p>
-        )}
-  
-        {error && !loading && (
-          <p className="text-sm text-red-400">Error: {error}</p>
-        )}
-  
-        {!loading && !error && (
+    }
+
+    load();
+  }, []);
+
+  return (
+    <>
+      {loading && (
+        <p className="text-sm text-muted-foreground">Loading tokens…</p>
+      )}
+
+      {error && !loading && (
+        <p className="text-sm text-red-400">Error: {error}</p>
+      )}
+
+      {!loading && !error && (
+        <>
+          <div className="navbar space-x-4">
+            <span>
+              tokens deployed: <small className="font-bold">{tokens.length}</small>
+            </span>
+            <span>
+              tokens left: <small className="font-bold">{365 - tokens.length}</small>
+            </span>
+          </div>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
             {tokens.length === 0 && (
               <p className="text-sm text-muted-foreground">
                 No tokens found in /api/token-price.
               </p>
             )}
-  
+
             {tokens.map((token) => (
               <div
                 key={token.address}
-                className="rounded-md bg-black/40 border border-mut p-4 space-y-2"
+                className="rounded-md border border-mut p-4 space-y-2"
               >
                 <div className="flex items-center justify-between gap-2">
                   <div>
@@ -100,7 +109,7 @@ export default function Tokens() {
                     </div>
                   )}
                 </div>
-  
+
                 <div className="grid grid-cols-2 gap-2 text-xs text-muted-foreground">
                   <div>
                     <div className="uppercase">MC</div>
@@ -128,12 +137,10 @@ export default function Tokens() {
                   </div>
                   <div>
                     <div className="uppercase">DEX</div>
-                    <div className="text-white">
-                      {token.dex ?? "-"}
-                    </div>
+                    <div className="text-white">{token.dex ?? "-"}</div>
                   </div>
                 </div>
-  
+
                 {token.url && (
                   <a
                     href={token.url}
@@ -144,7 +151,7 @@ export default function Tokens() {
                     View on Dexscreener
                   </a>
                 )}
-  
+
                 {token.error && (
                   <p className="mt-2 text-xs text-red-400">
                     Error: {token.error}
@@ -153,8 +160,8 @@ export default function Tokens() {
               </div>
             ))}
           </div>
-        )}
-      </>
-    );
-  }
-  
+        </>
+      )}
+    </>
+  );
+}

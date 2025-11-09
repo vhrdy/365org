@@ -45,21 +45,21 @@ export default function Tokens() {
   }, []);
 
   return (
-    <>
+    <div className="container tokens-grid space-y-6">
+      <p className="text-3xl font-medium">tokens</p>
       {loading && (
         <div>
           <div className="w-full h-[30px] animate-pulse mb-4 bg-gray-900 rounded-md"></div>
-
-                  <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          <div className="w-full h-[250px] animate-pulse bg-gray-900 rounded-md"></div>
-          <div className="w-full h-[250px] animate-pulse bg-gray-900 rounded-md"></div>
-          <div className="w-full h-[250px] animate-pulse bg-gray-900 rounded-md"></div>
-          <div className="w-full h-[250px] animate-pulse bg-gray-900 rounded-md"></div>
-          <div className="w-full h-[250px] animate-pulse bg-gray-900 rounded-md"></div>
-          <div className="w-full h-[250px] animate-pulse bg-gray-900 rounded-md"></div>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+            <div className="w-full h-[250px] animate-pulse bg-gray-900 rounded-md"></div>
+            <div className="w-full h-[250px] animate-pulse bg-gray-900 rounded-md"></div>
+            <div className="w-full h-[250px] animate-pulse bg-gray-900 rounded-md"></div>
+            <div className="w-full h-[250px] animate-pulse bg-gray-900 rounded-md"></div>
+            <div className="w-full h-[250px] animate-pulse bg-gray-900 rounded-md"></div>
+            <div className="w-full h-[250px] animate-pulse bg-gray-900 rounded-md"></div>
           </div>
         </div>
-        )}
+      )}
 
       {error && !loading && (
         <p className="text-sm text-red-400">Error: {error}</p>
@@ -69,10 +69,12 @@ export default function Tokens() {
         <>
           <div className="navbar space-x-4">
             <span>
-              tokens deployed: <small className="font-bold">{tokens.length}</small>
+              tokens deployed:{" "}
+              <small className="font-bold">{tokens.length}</small>
             </span>
             <span>
-              tokens left: <small className="font-bold">{365 - tokens.length}</small>
+              tokens left:{" "}
+              <small className="font-bold">{365 - tokens.length}</small>
             </span>
           </div>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -174,6 +176,6 @@ export default function Tokens() {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 }

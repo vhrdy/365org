@@ -25,6 +25,8 @@ const CustomTerminal = ({ onComplete }: CustomTerminalProps) => {
   }, [onComplete, totalDurationMs]);
 
   return (
+    <div className="container terminal">
+
     <Terminal className="w-full max-w-full">
       <AnimatedSpan delay={100}>$ npm install 365</AnimatedSpan>
       <TypingAnimation delay={1000} duration={100}>
@@ -41,6 +43,7 @@ const CustomTerminal = ({ onComplete }: CustomTerminalProps) => {
       </TypingAnimation>
       <AnimatedSpan delay={14500}>4ztyXrk7YLUwJ56o1sAXMm7UM1xc4idF45HUcqM3pump</AnimatedSpan>
     </Terminal>
+    </div>
   );
 };
 

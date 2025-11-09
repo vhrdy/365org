@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 
 import Tokens from "@/components/Tokens";
 import Chart from "@/components/Chart";
-
 import CustomTerminal from "@/components/CustomTerminal";
+import Gallery from "@/components/Gallery";
 
 export default function Home() {
   const [terminalDone, setTerminalDone] = useState(false);
@@ -30,10 +30,8 @@ export default function Home() {
       <CustomTerminal onComplete={(done) => setTerminalDone(done)} />
       <div className="container flex flex-col space-y-8">
         <Chart />
-        {/* <div className="container space-y-8 flex flex-col md:items-end">
-          <div className="toto">toto</div>
-        </div> */}
         <Tokens />
+        <Gallery/>
       </div>
     </div>
   );
